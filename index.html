@@ -3,90 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="從 A 到 Z，透過莎士比亞劇本詞彙、經典台詞與朗讀音檔，感受英語文學之美。">
+  <meta name="description" content="莎士比亞 A–Z 詞彙典藏：26 個經典詞彙、劇本金句、印象派油畫與可替換朗讀音檔。">
   <meta name="theme-color" content="#f5efe3">
-  <title>Shakespeare A–Z｜莎士比亞的文學詞典</title>
+  <title>Shakespeare A–Z｜莎士比亞詞彙典藏</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .site-header{position:relative}
+    .archive-intro{padding:64px clamp(22px,8vw,120px) 12px;text-align:center}
+    .archive-intro h1{font:600 clamp(34px,5vw,58px)/1.15 var(--serif);color:var(--navy);margin:12px 0}
+    .archive-intro h1 em{color:var(--gold);font-weight:500}
+    .archive-intro p{font:14px/1.9 'Noto Serif TC',serif;color:var(--muted);margin:0}
+    .collection-section{padding-top:34px}
+    @media(max-width:700px){.archive-intro{padding:45px 20px 8px}.archive-intro h1{font-size:36px}.collection-section{padding-top:28px}}
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Shakespeare A to Z 首頁">
-      <span class="brand-mark">✦</span><span>SHAKESPEARE <em>A–Z</em><small>THE LANGUAGE OF THE STAGE</small></span>
+    <a class="brand" href="#top" aria-label="Shakespeare A to Z 詞彙典藏首頁">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>SHAKESPEARE <em>A–Z</em><small>THE LANGUAGE OF THE STAGE</small></span>
     </a>
-    <nav class="main-nav" aria-label="主要導覽"><a href="#collection">詞彙典藏</a><a href="#about">關於計畫</a><a href="#howto">學習方式</a></nav>
-    <a class="header-cta" href="#collection">開始探索 <span>↗</span></a>
+    <a class="header-cta" href="#collection">瀏覽典藏 <span>↓</span></a>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="hero-art" role="img" aria-label="印象派風格的莎士比亞與英國古城景色"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">A LITERARY JOURNEY · 26 WORDS</p>
-        <h1>Words that<br><i>live forever.</i></h1>
-        <p class="hero-sub">從 A 到 Z，走進莎士比亞的語言宇宙。<br>聽見字詞的聲音，讀懂舞台上的人性。</p>
-        <a class="hero-button" href="#collection">探索 26 個經典詞彙 <span>↓</span></a>
-      </div>
-      <div class="hero-caption">WILLIAM SHAKESPEARE · 1564—1616</div>
+    <section class="archive-intro" aria-labelledby="page-title">
+      <span class="tiny-label">THE SHAKESPEARE WORD ARCHIVE · A–Z</span>
+      <h1 id="page-title">莎士比亞 <em>A–Z</em> 詞彙典藏</h1>
+      <p>二十六個字母，收藏劇本中的經典詞彙與不朽台詞。</p>
     </section>
 
-    <section class="intro-strip" id="about">
-      <div><span class="tiny-label">THE ART OF WORDS</span><h2>文學，不只讀進眼裡，<i>也要聽進心裡。</i></h2></div>
-      <p>每個詞彙都是一扇門。從一個英文單字出發，遇見莎士比亞筆下的野心、愛、嫉妒、命運與人性。</p>
-    </section>
-
-    <section class="collection-section" id="collection">
+    <section class="collection-section" id="collection" aria-labelledby="collection-title">
       <div class="section-heading">
-        <div><span class="tiny-label">THE COLLECTION</span><h2>莎士比亞詞彙典藏</h2><p>26 個字母，26 段舞台人生。</p></div>
+        <div>
+          <span class="tiny-label">THE COLLECTION</span>
+          <h2 id="collection-title">A–Z 經典詞彙</h2>
+          <p>選擇字母或搜尋詞彙，點選卡片聆聽單字與劇本朗讀。</p>
+        </div>
         <div class="collection-count"><strong>26</strong><span>WORDS<br>TO DISCOVER</span></div>
       </div>
+
       <div class="toolbar">
-        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="搜尋英文單字或中文意思…" aria-label="搜尋詞彙"></label>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="搜尋英文單字或中文意思…" aria-label="搜尋詞彙">
+        </label>
         <div class="letter-filter" id="letterFilter" aria-label="依字母篩選"></div>
       </div>
-      <div class="word-grid" id="wordGrid" aria-live="polite"><div class="loading">正在整理莎士比亞的字詞……</div></div>
+
+      <div class="word-grid" id="wordGrid" aria-live="polite">
+        <div class="loading">正在整理莎士比亞的字詞……</div>
+      </div>
       <p class="no-results" id="noResults" hidden>沒有找到符合的詞彙，試試其他關鍵字。</p>
     </section>
-
-    <section class="quote-banner">
-      <div class="quote-mark">“</div><blockquote>All the world’s a stage,<br>and all the men and women merely players.</blockquote><p>— <i>As You Like It</i>, Act 2, Scene 7</p>
-    </section>
-
-    <section class="how-section" id="howto">
-      <span class="tiny-label">A SMALL RITUAL OF LEARNING</span><h2>讓每個字，成為你的台詞。</h2>
-      <div class="steps">
-        <article><span>01</span><h3>看見詞彙</h3><p>先欣賞一幅畫，再認識一個英文詞彙與中文意義。</p></article>
-        <article><span>02</span><h3>聽見聲音</h3><p>播放單字與劇本朗讀，感受發音、節奏與語氣。</p></article>
-        <article><span>03</span><h3>讀懂情境</h3><p>閱讀台詞出處與背景，理解莎士比亞如何描寫人性。</p></article>
-      </div>
-    </section>
   </main>
-
-  <footer class="site-footer"><a class="footer-brand" href="#top">SHAKESPEARE <em>A–Z</em></a><p>Learn the words. Hear the lines. Feel the drama.</p><small>Designed for curious minds &amp; lovers of literature.</small></footer>
 
   <div class="modal" id="wordModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalWord">
     <div class="modal-backdrop" data-close="true"></div>
     <article class="modal-panel">
       <button class="modal-close" id="modalClose" aria-label="關閉">×</button>
-      <div class="modal-image-wrap"><img id="modalImage" src="" alt="" class="modal-image"><span class="modal-letter" id="modalLetter"></span></div>
+      <div class="modal-image-wrap">
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <span class="modal-letter" id="modalLetter"></span>
+      </div>
       <div class="modal-content">
         <p class="tiny-label" id="modalEyebrow">A WORD FROM SHAKESPEARE</p>
-        <h2 id="modalWord"></h2><p class="modal-zh" id="modalZh"></p>
+        <h2 id="modalWord"></h2>
+        <p class="modal-zh" id="modalZh"></p>
         <p class="meaning" id="modalMeaning"></p>
         <div class="gold-rule"></div>
         <p class="tiny-label">THE IMMORTAL LINE · 經典台詞</p>
         <blockquote class="modal-quote" id="modalQuote"></blockquote>
         <p class="play-source" id="modalSource"></p>
-        <div class="audio-row"><div><span class="audio-kicker">01 / PRONUNCIATION</span><strong>單字朗讀</strong></div><audio id="wordAudio" controls preload="none"></audio></div>
-        <div class="audio-row"><div><span class="audio-kicker">02 / THE QUOTE</span><strong>劇本朗讀</strong></div><audio id="quoteAudio" controls preload="none"></audio></div>
-        <div class="context-note"><span>✦</span><div><strong>READ BETWEEN THE LINES</strong><p id="modalContext"></p></div></div>
+        <div class="audio-row">
+          <div><span class="audio-kicker">01 / PRONUNCIATION</span><strong>單字朗讀</strong></div>
+          <audio id="wordAudio" controls preload="none"></audio>
+        </div>
+        <div class="audio-row">
+          <div><span class="audio-kicker">02 / THE QUOTE</span><strong>劇本朗讀</strong></div>
+          <audio id="quoteAudio" controls preload="none"></audio>
+        </div>
+        <div class="context-note">
+          <span aria-hidden="true">✦</span>
+          <div><strong>READ BETWEEN THE LINES</strong><p id="modalContext"></p></div>
+        </div>
         <p class="modal-disclaimer" id="modalDisclaimer"></p>
       </div>
     </article>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
